@@ -48,3 +48,29 @@
   .zane__portrait { align-items: flex-start; }
   .zane__caption { text-align: left; }
 }
+
+@media (max-width: 860px) {
+  .zane__inner {
+    gap: 34px;
+  }
+}
+
+@media (max-width: 520px) {
+  .zane__title {
+    margin-bottom: 18px;
+  }
+
+  .zane__quote {
+    padding-left: 16px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .zane__closing {
+    margin-top: 16px;
+  }
+
+  .zane__cta {
+    margin-top: 22px;
+  }
+}

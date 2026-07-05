@@ -18,3 +18,21 @@
   color: var(--steel);
   max-width: 32ch;
 }
+
+@media (max-width: 768px) {
+  .truck-strip {
+    padding: 30px 0;
+  }
+
+  .truck-strip__inner {
+    gap: 18px;
+  }
+
+  .truck-strip__img {
+    width: min(190px, 72vw);
+  }
+
+  .truck-strip__caption {
+    text-align: center;
+  }
+}

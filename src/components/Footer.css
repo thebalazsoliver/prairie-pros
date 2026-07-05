@@ -47,3 +47,15 @@
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
 }
+
+@media (max-width: 520px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 44px 18px 34px;
+  }
+
+  .footer__bottom-inner {
+    padding: 18px;
+  }
+}

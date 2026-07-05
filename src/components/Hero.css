@@ -57,3 +57,60 @@
   color: rgba(247,245,239,0.65);
   line-height: 1.4;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 108px 0 54px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+  }
+
+  .hero__sub {
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero__actions {
+    margin-top: 26px;
+    gap: 12px;
+  }
+
+  .hero__trust {
+    margin-top: 34px;
+    padding-top: 22px;
+    gap: 18px;
+  }
+
+  .hero__trust-item {
+    flex: 1 1 130px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding: 100px 0 46px;
+  }
+
+  .hero__trust {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .hero__trust-item {
+    min-width: 0;
+  }
+
+  .hero__trust-num {
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+
+  .hero__trust-label {
+    font-size: 0.62rem;
+    line-height: 1.35;
+  }
+}

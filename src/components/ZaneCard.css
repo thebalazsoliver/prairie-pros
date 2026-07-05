@@ -52,3 +52,17 @@
   }
   .zane-card__btn { width: 100%; }
 }
+
+@media (max-width: 520px) {
+  .zane-card {
+    max-width: 320px;
+  }
+
+  .zane-card__photo {
+    aspect-ratio: 1 / 1.08;
+  }
+
+  .zane-card__footer {
+    padding: 16px 18px;
+  }
+}

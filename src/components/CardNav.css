@@ -237,3 +237,30 @@
 @media (max-width: 480px) {
   .logo-wordmark { display: none; }
 }
+
+@media (max-width: 768px) {
+  .card-nav-container {
+    width: calc(100% - 24px);
+    top: 12px;
+  }
+
+  .card-nav,
+  .card-nav-top {
+    height: 56px;
+  }
+
+  .card-nav-content {
+    top: 56px;
+    gap: 6px;
+  }
+
+  .nav-card {
+    min-height: 54px;
+    padding: 11px 13px;
+    gap: 6px;
+  }
+
+  .nav-card-links {
+    gap: 2px;
+  }
+}
