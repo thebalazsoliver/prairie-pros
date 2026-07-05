@@ -1,0 +1,81 @@
+.pricing-hero {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: var(--cream);
+  padding: 144px 0 60px;
+  overflow: hidden;
+  position: relative;
+}
+.pricing-hero__inner { position: relative; z-index: 1; max-width: 700px; }
+.pricing-hero__eyebrow { color: var(--gold); margin-bottom: 14px; }
+.pricing-hero__title { font-size: clamp(2rem, 4vw, 3rem); color: var(--chrome-1); }
+.pricing-hero__sub { margin-top: 18px; color: rgba(247,245,239,0.8); line-height: 1.6; font-size: 1.05rem; }
+.pricing-hero__spray { position: absolute; right: -20px; bottom: -30px; width: 320px; opacity: 0.5; }
+
+.pricing-list { background: var(--cream); }
+
+.pricing-item {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(22,39,79,0.1);
+}
+.pricing-item:first-child { padding-top: 0; }
+
+.pricing-item__head { display: flex; gap: 18px; align-items: flex-start; }
+.pricing-item__id {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gold);
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 5px 9px;
+  height: fit-content;
+}
+.pricing-item__title { font-size: 1.6rem; color: var(--navy-deep); }
+.pricing-item__billing {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--steel);
+}
+
+.pricing-item__body { display: flex; flex-direction: column; gap: 20px; }
+.pricing-item__note { color: #47526b; line-height: 1.65; max-width: 62ch; }
+
+.pricing-item__rows { display: flex; flex-direction: column; gap: 10px; max-width: 420px; }
+.pricing-item__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(22,39,79,0.1);
+  border-radius: 10px;
+  padding: 12px 18px;
+}
+.pricing-item__row-label { font-weight: 600; color: var(--navy-deep); }
+.pricing-item__row-price {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--red);
+}
+
+.pricing-cta {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--steel);
+  color: var(--cream);
+  border-radius: 18px;
+  padding: 34px 38px;
+  flex-wrap: wrap;
+}
+.pricing-cta__title { font-family: var(--font-display); font-size: 1.35rem; color: var(--chrome-1); }
+.pricing-cta__sub { margin-top: 8px; color: rgba(247,245,239,0.8); max-width: 46ch; }
+
+@media (max-width: 760px) {
+  .pricing-item { grid-template-columns: 1fr; gap: 18px; }
+}

@@ -1,0 +1,20 @@
+.spray-splash { width: 100%; height: auto; overflow: visible; }
+.spray-splash__arc {
+  stroke-dashoffset: 0;
+  animation: spray-dash 6s linear infinite;
+}
+.spray-splash__drop { animation: spray-bob 2.4s ease-in-out infinite; }
+.spray-splash__drop--2 { animation-delay: 0.3s; }
+.spray-splash__drop--3 { animation-delay: 0.6s; }
+
+@keyframes spray-dash {
+  to { stroke-dashoffset: -160; }
+}
+@keyframes spray-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spray-splash__arc, .spray-splash__drop { animation: none; }
+}

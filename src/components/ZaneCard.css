@@ -1,0 +1,54 @@
+.zane-card {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  background: var(--navy-deep);
+}
+
+.zane-card__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.zane-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px 22px;
+}
+
+.zane-card__name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--chrome-1);
+  line-height: 1.1;
+}
+
+.zane-card__role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 6px;
+}
+
+.zane-card__btn {
+  padding: 11px 18px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .zane-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .zane-card__btn { width: 100%; }
+}

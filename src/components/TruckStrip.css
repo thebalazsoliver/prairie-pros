@@ -1,0 +1,20 @@
+.truck-strip { background: var(--cream-dim); padding: 46px 0; }
+.truck-strip__inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.truck-strip__img {
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(22,39,79,0.1);
+}
+.truck-strip__caption {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--steel);
+  max-width: 32ch;
+}
