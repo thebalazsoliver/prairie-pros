@@ -58,7 +58,7 @@
 .pricing-item__row-price {
   font-family: var(--font-mono);
   font-weight: 600;
-  color: var(--red);
+  color: #127e38;
 }
 
 .pricing-cta {

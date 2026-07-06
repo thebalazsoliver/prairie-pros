@@ -49,7 +49,7 @@
 .service-card__price {
   font-family: var(--font-mono);
   font-weight: 600;
-  color: var(--red);
+  color: #127e38;
   font-size: 0.95rem;
   margin-top: 6px;
 }
