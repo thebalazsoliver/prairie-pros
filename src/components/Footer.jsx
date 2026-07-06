@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from '../assets/prairie-pros-logo.svg'
 import './Footer.css'
 
 export default function Footer() {
@@ -9,7 +10,7 @@ export default function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <img
-            src="/prairie-pros-logo.svg"
+            src={logo}
             alt="Prairie Pros Exterior Services"
             className="footer__mark"
           />

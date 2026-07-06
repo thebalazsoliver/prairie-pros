@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
+import logo from '../assets/prairie-pros-logo.svg';
 import ShinyText from './ShinyText.jsx';
 import './CardNav.css';
 
@@ -189,7 +190,7 @@ const CardNav = ({
 
           <a href="/" className="logo-container" aria-label="Prairie Pros LLC home">
             <img
-              src="/prairie-pros-logo.svg"
+              src={logo}
               alt={logoAlt}
               className="logo"
             />
@@ -230,4 +231,3 @@ const CardNav = ({
 };
 
 export default CardNav;
-
