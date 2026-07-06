@@ -9,7 +9,12 @@
   padding: 64px 24px 48px;
 }
 .footer__brand { display: flex; align-items: center; gap: 12px; }
-.footer__mark { width: 44px; height: 44px; }
+.footer__mark {
+  width: 150px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 .footer__name {
   font-family: var(--font-display);
   color: var(--chrome-1);
