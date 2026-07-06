@@ -24,13 +24,15 @@
 
 .pricing-item__head { display: flex; gap: 18px; align-items: flex-start; }
 .pricing-item__id {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
   color: var(--gold);
   background: var(--navy);
-  border-radius: 8px;
-  padding: 5px 9px;
-  height: fit-content;
+  border-radius: 10px;
 }
 .pricing-item__title { font-size: 1.6rem; color: var(--navy-deep); }
 .pricing-item__billing {
@@ -78,39 +80,4 @@
 
 @media (max-width: 760px) {
   .pricing-item { grid-template-columns: 1fr; gap: 18px; }
-}
-
-@media (max-width: 768px) {
-  .pricing-hero {
-    padding: 104px 0 42px;
-  }
-
-  .pricing-item {
-    padding: 28px 0;
-  }
-
-  .pricing-item__head {
-    gap: 12px;
-  }
-
-  .pricing-item__body {
-    gap: 14px;
-  }
-
-  .pricing-item__row {
-    align-items: flex-start;
-    gap: 10px;
-    padding: 11px 13px;
-  }
-
-  .pricing-cta {
-    margin-top: 34px;
-    padding: 26px 20px;
-  }
-}
-
-@media (max-width: 460px) {
-  .pricing-item__row {
-    flex-direction: column;
-  }
 }

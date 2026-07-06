@@ -1,3 +1,4 @@
+import { Snowflake, Droplets, TreePine, Truck, Trash2 } from 'lucide-react'
 import SpraySplash from '../components/SpraySplash.jsx'
 import ShinyText from '../components/ShinyText.jsx'
 import './Pricing.css'
@@ -5,6 +6,7 @@ import './Pricing.css'
 const pricing = [
   {
     id: '01',
+    icon: Snowflake,
     slug: 'snow-removal',
     title: 'Snow Removal',
     billing: 'Billed by square footage · per-visit or seasonal contract',
@@ -16,6 +18,7 @@ const pricing = [
   },
   {
     id: '02',
+    icon: Droplets,
     slug: 'pressure-washing',
     title: 'Pressure Washing',
     billing: 'Billed by square footage',
@@ -26,6 +29,7 @@ const pricing = [
   },
   {
     id: '03',
+    icon: TreePine,
     slug: 'holiday-lighting',
     title: 'Holiday Lighting',
     billing: 'Billed by linear roofline footage',
@@ -36,6 +40,7 @@ const pricing = [
   },
   {
     id: '04',
+    icon: Truck,
     slug: 'fleet-washing',
     title: 'Fleet Washing',
     billing: 'Billed by filth level, machine size and wash frequency',
@@ -46,6 +51,7 @@ const pricing = [
   },
   {
     id: '05',
+    icon: Trash2,
     slug: 'bin-cleaning',
     title: 'Bin Cleaning',
     billing: 'Flat rate · one-time cleaning',
@@ -77,7 +83,9 @@ export default function Pricing() {
           {pricing.map((service) => (
             <article key={service.id} className="pricing-item" id={service.slug}>
               <div className="pricing-item__head">
-                <span className="pricing-item__id">{service.id}</span>
+                <span className="pricing-item__id">
+                  <service.icon size={20} strokeWidth={2} />
+                </span>
                 <div>
                   <h2 className="pricing-item__title">{service.title}</h2>
                   <p className="pricing-item__billing">{service.billing}</p>
