@@ -82,11 +82,12 @@
 }
 
 .logo {
-  width: 170px;
-  height: auto;
+  width: auto;
+  height: 44px;
   max-height: 48px;
   display: block;
   object-fit: contain;
+  object-position: left center;
   flex-shrink: 0;
 }
 
@@ -259,14 +260,16 @@
 
 @media (max-width: 768px) {
   .logo {
-    width: 128px;
+    width: auto;
+    height: 38px;
     max-height: 42px;
   }
 }
 
 @media (max-width: 420px) {
   .logo {
-    width: 112px;
+    width: auto;
+    height: 34px;
     max-height: 38px;
   }
 }
