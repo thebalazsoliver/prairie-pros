@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 import logo from '../assets/prairie-pros-logo.svg';
@@ -49,6 +49,8 @@ const CardNav = ({
 }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [theme, setTheme] = useState('dark');
+  const wrapperRef = useRef(null);
   const navRef = useRef(null);
   const cardsRef = useRef([]);
   const tlRef = useRef(null);
@@ -161,13 +163,79 @@ const CardNav = ({
     }
   };
 
+  // Close the menu when the person clicks or taps anywhere outside of it.
+  useEffect(() => {
+    if (!isExpanded) return;
+
+    const handlePointerDown = e => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+        toggleMenu();
+      }
+    };
+
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('touchstart', handlePointerDown);
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('touchstart', handlePointerDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded]);
+
+  // Match the pill's colors to whatever is behind it: dark navy sections
+  // (like the hero or the contact block) keep the navy pill, but once you
+  // scroll past them onto a cream section, the pill flips to a light style
+  // instead of floating there as a dark blob.
+  useEffect(() => {
+    let rafId = null;
+
+    const checkTheme = () => {
+      rafId = null;
+      const el = wrapperRef.current;
+      if (!el || isExpanded) return;
+
+      const rect = el.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+
+      const prevPointerEvents = el.style.pointerEvents;
+      el.style.pointerEvents = 'none';
+      const target = document.elementFromPoint(x, y);
+      el.style.pointerEvents = prevPointerEvents;
+
+      const themed = target?.closest?.('[data-nav-theme]');
+      setTheme(themed?.getAttribute('data-nav-theme') === 'dark' ? 'dark' : 'light');
+    };
+
+    const onScroll = () => {
+      if (rafId == null) rafId = requestAnimationFrame(checkTheme);
+    };
+
+    checkTheme();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [isExpanded]);
+
   const setCardRef = i => el => {
     if (el) cardsRef.current[i] = el;
   };
 
+  const isLight = theme === 'light' && !isExpanded;
+  const effectiveBaseColor = isLight ? '#FFFFFF' : baseColor;
+  const effectiveMenuColor = isLight ? '#16274F' : menuColor;
+
   return (
-    <div className={`card-nav-container ${className}`}>
-      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
+    <div ref={wrapperRef} className={`card-nav-container ${className}`}>
+      <nav
+        ref={navRef}
+        className={`card-nav ${isExpanded ? 'open' : ''} ${isLight ? 'card-nav--light' : ''}`}
+        style={{ backgroundColor: effectiveBaseColor }}
+      >
         <div className="card-nav-top">
           <div
             className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
@@ -182,13 +250,18 @@ const CardNav = ({
             aria-label={isExpanded ? 'Close menu' : 'Open menu'}
             aria-expanded={isExpanded}
             tabIndex={0}
-            style={{ color: menuColor }}
+            style={{ color: effectiveMenuColor }}
           >
             <div className="hamburger-line" />
             <div className="hamburger-line" />
           </div>
 
-          <a href="/" className="logo-container" aria-label="Prairie Pros LLC home">
+          <a
+            href="/"
+            className="logo-container"
+            aria-label="Prairie Pros LLC home"
+            onClick={() => isExpanded && toggleMenu()}
+          >
             <img
               src={logo}
               alt={logoAlt}
@@ -200,6 +273,7 @@ const CardNav = ({
             href="/#contact"
             className="card-nav-cta-button"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+            onClick={() => isExpanded && toggleMenu()}
           >
             <ShinyText text="Get a Quote" color={buttonTextColor} shineColor="#ffffff" speed={2.4} />
           </a>
@@ -216,7 +290,13 @@ const CardNav = ({
               <div className="nav-card-label">{item.label}</div>
               <div className="nav-card-links">
                 {item.links?.map((lnk, i) => (
-                  <a key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href} aria-label={lnk.ariaLabel}>
+                  <a
+                    key={`${lnk.label}-${i}`}
+                    className="nav-card-link"
+                    href={lnk.href}
+                    aria-label={lnk.ariaLabel}
+                    onClick={() => isExpanded && toggleMenu()}
+                  >
                     <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
                     {lnk.label}
                   </a>

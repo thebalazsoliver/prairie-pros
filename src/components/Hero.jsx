@@ -4,7 +4,7 @@ import './Hero.css'
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" data-nav-theme="dark">
       <div className="hero__field" aria-hidden="true">
         <DotField
           dotRadius={1.5}

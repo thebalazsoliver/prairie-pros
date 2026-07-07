@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="footer">
+    <footer className="footer" data-nav-theme="dark">
       <div className="container footer__inner">
         <div className="footer__brand">
           <img

@@ -65,7 +65,7 @@ const pricing = [
 export default function Pricing() {
   return (
     <>
-      <header className="pricing-hero">
+      <header className="pricing-hero" data-nav-theme="dark">
         <div className="container pricing-hero__inner">
           <p className="eyebrow pricing-hero__eyebrow">Pricing</p>
           <h1 className="pricing-hero__title">What it costs to get it done right</h1>

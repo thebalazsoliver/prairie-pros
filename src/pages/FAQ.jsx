@@ -42,7 +42,7 @@ export default function FAQ() {
 
   return (
     <>
-      <header className="faq-hero">
+      <header className="faq-hero" data-nav-theme="dark">
         <div className="container">
           <p className="eyebrow faq-hero__eyebrow">FAQ</p>
           <h1 className="faq-hero__title">Questions we hear a lot</h1>

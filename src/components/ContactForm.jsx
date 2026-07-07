@@ -53,7 +53,7 @@ ${form.message}
   }
 
   return (
-    <section id="contact" className="contact section-pad">
+    <section id="contact" className="contact section-pad" data-nav-theme="dark">
       <div className="container">
         <div className="contact-card">
           <div className="contact-card__info">
