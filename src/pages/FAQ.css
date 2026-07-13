@@ -6,6 +6,14 @@
 .faq-hero__eyebrow { color: var(--gold); margin-bottom: 14px; }
 .faq-hero__title { font-size: clamp(2rem, 4vw, 3rem); color: var(--chrome-1); }
 .faq-hero__sub { margin-top: 16px; color: rgba(247,245,239,0.8); font-size: 1.05rem; }
+.faq-hero__phone {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(240, 180, 41, 0.4);
+  text-underline-offset: 3px;
+}
+.faq-hero__phone:hover { color: var(--ice); }
 
 .faq-list { background: var(--cream); }
 .faq-list__container { max-width: 780px; }
@@ -33,12 +41,45 @@
   font-size: 1.3rem;
   color: var(--gold);
   flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.faq-item--open .faq-item__icon {
+  transform: rotate(45deg);
+}
+
+.faq-item__answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+}
+.faq-item--open .faq-item__answer-wrap {
+  grid-template-rows: 1fr;
+}
+.faq-item__answer-inner {
+  overflow: hidden;
+  min-height: 0;
 }
 .faq-item__answer {
   padding: 0 4px 26px;
   color: #47526b;
   line-height: 1.65;
   max-width: 62ch;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.28s ease 0.02s, transform 0.28s ease 0.02s;
+}
+.faq-item--open .faq-item__answer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__icon,
+  .faq-item__answer-wrap,
+  .faq-item__answer {
+    transition: none;
+  }
 }
 
 .faq-cta {

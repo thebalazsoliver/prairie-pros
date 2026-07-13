@@ -46,7 +46,7 @@ export default function FAQ() {
         <div className="container">
           <p className="eyebrow faq-hero__eyebrow">FAQ</p>
           <h1 className="faq-hero__title">Questions we hear a lot</h1>
-          <p className="faq-hero__sub">Can't find what you're looking for? Call or text us at (701) 260-9707.</p>
+          <p className="faq-hero__sub">Can't find what you're looking for? Call or text us at <a href="tel:+17012609707" className="faq-hero__phone">(701) 260-9707</a>.</p>
         </div>
       </header>
 
@@ -62,9 +62,13 @@ export default function FAQ() {
                   aria-expanded={isOpen}
                 >
                   <span>{item.q}</span>
-                  <span className="faq-item__icon" aria-hidden="true">{isOpen ? '−' : '+'}</span>
+                  <span className="faq-item__icon" aria-hidden="true">+</span>
                 </button>
-                {isOpen && <p className="faq-item__answer">{item.a}</p>}
+                <div className="faq-item__answer-wrap">
+                  <div className="faq-item__answer-inner">
+                    <p className="faq-item__answer">{item.a}</p>
+                  </div>
+                </div>
               </div>
             )
           })}

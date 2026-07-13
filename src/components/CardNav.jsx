@@ -23,6 +23,7 @@ const items = [
     textColor: '#F7F5EF',
     links: [
       { label: 'Meet Zane', href: '/#meet-zane', ariaLabel: 'Meet Zane, the founder' },
+      { label: 'Gallery', href: '/gallery', ariaLabel: 'Photo gallery of recent work' },
       { label: 'Full Pricing', href: '/pricing', ariaLabel: 'Full pricing breakdown' },
       { label: 'FAQ', href: '/faq', ariaLabel: 'Frequently asked questions' }
     ]

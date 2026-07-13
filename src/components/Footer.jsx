@@ -39,6 +39,9 @@ export default function Footer() {
           <Link to="/pricing" className="footer__link">
             Pricing
           </Link>
+          <Link to="/gallery" className="footer__link">
+            Gallery
+          </Link>
           <Link to="/faq" className="footer__link">
             FAQ
           </Link>
