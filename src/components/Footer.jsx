@@ -67,6 +67,10 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p>© {year} Prairie Pros LLC. Built to weather every season.</p>
+          <div className="footer__legal-links">
+            <Link to="/privacy-policy" className="footer__legal-link">Privacy Policy</Link>
+            <Link to="/cookie-policy" className="footer__legal-link">Cookie Policy</Link>
+          </div>
         </div>
       </div>
     </footer>

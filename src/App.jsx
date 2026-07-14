@@ -2,10 +2,13 @@ import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import CardNav from './components/CardNav.jsx'
 import Footer from './components/Footer.jsx'
+import CookieConsent from './components/CookieConsent.jsx'
 import Home from './pages/Home.jsx'
 import Pricing from './pages/Pricing.jsx'
 import FAQ from './pages/FAQ.jsx'
 import Gallery from './pages/Gallery.jsx'
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import CookiePolicy from './pages/CookiePolicy.jsx'
 
 // Handles scroll position on every route change:
 // - If the new URL has a #hash (e.g. from the footer or nav), scroll to that
@@ -57,9 +60,12 @@ export default function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
       </main>
       <Footer />
+      <CookieConsent />
     </>
   )
 }
