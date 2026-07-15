@@ -18,6 +18,11 @@
   color: var(--steel);
   max-width: 32ch;
 }
+.truck-strip__divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(22, 39, 79, 0.12);
+}
 
 @media (max-width: 768px) {
   .truck-strip {
@@ -34,5 +39,9 @@
 
   .truck-strip__caption {
     text-align: center;
+  }
+
+  .truck-strip__divider {
+    display: none;
   }
 }

@@ -1,0 +1,51 @@
+.review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(22, 39, 79, 0.12);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+}
+
+.review-badge--link {
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.review-badge--link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgba(240, 180, 41, 0.4);
+}
+
+.review-badge__stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.review-badge__star {
+  color: var(--gold);
+}
+
+.review-badge__score {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--navy-deep);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.review-badge__num {
+  display: inline-block;
+  text-align: right;
+}
+
+.review-badge__count {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--steel);
+}
