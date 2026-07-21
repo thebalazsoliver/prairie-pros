@@ -65,11 +65,13 @@ const categories = [
     title: 'Concrete Sealing',
     blurb: 'Concrete surfaces cleaned, restored, and sealed for a cleaner finish and longer-lasting protection.',
     photos: [
+      { src: concrete3, alt: 'Concrete patio and walkway area prepared for sealing' },
+      { src: concrete5, alt: 'Finished sealed concrete surface with an even protective finish' },
+      { src: concrete4, alt: 'Concrete surface after cleaning and sealing work' },
       { src: concrete1, alt: 'Weathered concrete surface before sealing treatment' },
       { src: concrete2, alt: 'Close-up of concrete surface during preparation for sealing' },
-      { src: concrete3, alt: 'Concrete patio and walkway area prepared for sealing' },
-      { src: concrete4, alt: 'Concrete surface after cleaning and sealing work' },
-      { src: concrete5, alt: 'Finished sealed concrete surface with an even protective finish' },
+      
+      
     ],
   },
   {
