@@ -9,12 +9,26 @@ const pricing = [
     icon: Snowflake,
     slug: 'snow-removal',
     title: 'Snow Removal',
-    billing: 'Billed by square footage · per-visit or seasonal contract',
-    rows: [
-      { label: 'Residential', price: '$30 – $2,500' },
-      { label: 'Commercial', price: 'Custom quote' },
+    billing: 'Pricing varies by lot size, snowfall accumulation, and complexity',
+    groups: [
+      {
+        title: 'Residential',
+        rows: [
+          { label: 'Per visit', price: '$30 – $200+' },
+          { label: 'Monthly', price: '$200 – $600+' },
+          { label: 'Seasonal', price: '$800 – $2,500+' },
+        ],
+      },
+      {
+        title: 'Commercial',
+        rows: [
+          { label: 'Per visit', price: '$150 – $750+' },
+          { label: 'Monthly', price: '$1,000 – $5,000+' },
+          { label: 'Seasonal', price: '$5,000 – $50,000+' },
+        ],
+      },
     ],
-    note: 'Choose per-visit for pay-as-it-falls flexibility, or lock in a seasonal rate so you\'re covered no matter how many storms roll through. Commercial lots are quoted individually based on square footage, layout, and turnaround needs.',
+    note: 'Residential and commercial pricing varies based on lot size, snowfall accumulation, access, layout, and overall complexity.',
   },
   {
     id: '02',
@@ -94,14 +108,34 @@ export default function Pricing() {
 
               <div className="pricing-item__body">
                 <p className="pricing-item__note">{service.note}</p>
-                <div className="pricing-item__rows">
-                  {service.rows.map((r) => (
-                    <div key={r.label} className="pricing-item__row">
-                      <span className="pricing-item__row-label">{r.label}</span>
-                      <span className="pricing-item__row-price">{r.price}</span>
-                    </div>
-                  ))}
-                </div>
+
+                {service.groups ? (
+                  <div className="pricing-item__groups">
+                    {service.groups.map((group) => (
+                      <div key={group.title} className="pricing-item__group">
+                        <h3 className="pricing-item__group-title">{group.title}</h3>
+
+                        <div className="pricing-item__rows">
+                          {group.rows.map((row) => (
+                            <div key={row.label} className="pricing-item__row">
+                              <span className="pricing-item__row-label">{row.label}</span>
+                              <span className="pricing-item__row-price">{row.price}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="pricing-item__rows">
+                    {service.rows.map((row) => (
+                      <div key={row.label} className="pricing-item__row">
+                        <span className="pricing-item__row-label">{row.label}</span>
+                        <span className="pricing-item__row-price">{row.price}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </article>
           ))}

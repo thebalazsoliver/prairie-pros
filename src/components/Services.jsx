@@ -6,8 +6,11 @@ const services = [
     tag: 'Winter',
     title: 'Snow Removal',
     slug: 'snow-removal',
-    desc: 'Per-visit or seasonal contracts, billed by square footage. Residential and commercial properties, cleared before your day starts.',
-    price: '$30–$2,500 residential',
+    desc: 'Per-visit, monthly, and seasonal plans for residential and commercial properties. Pricing varies by lot size, snowfall accumulation, and complexity.',
+    priceLines: [
+      'Residential from $30',
+      'Commercial from $150',
+    ],
   },
   {
     tag: 'Year-round',
@@ -52,7 +55,18 @@ export default function Services() {
               <span className="service-card__tag">{s.tag}</span>
               <h3 className="service-card__title">{s.title}</h3>
               <p className="service-card__desc">{s.desc}</p>
-              <p className="service-card__price">{s.price}</p>
+
+              {s.priceLines ? (
+                <div className="service-card__price-list">
+                  {s.priceLines.map((line) => (
+                    <span key={line} className="service-card__price-line">
+                      {line}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <p className="service-card__price">{s.price}</p>
+              )}
             </a>
           ))}
 
