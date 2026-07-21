@@ -15,6 +15,9 @@ import pressure03Railing from '../assets/gallery/pressure-03-railing.webp'
 import pressure04Splitfence from '../assets/gallery/pressure-04-splitfence.webp'
 import bins01Dirty1 from '../assets/gallery/bins-01-dirty1.webp'
 import bins01Clean from '../assets/gallery/bins-01-clean.webp'
+import holiday01 from '../assets/gallery/holiday-01.webp'
+import holiday02 from '../assets/gallery/holiday-02.webp'
+import holiday03 from '../assets/gallery/holiday-03.webp'
 
 import './Gallery.css'
 
@@ -44,6 +47,16 @@ const categories = [
       { src: pressure03RailingMid, alt: 'Composite railing during pressure washing showing the cleaned and dirty contrast' },
       { src: pressure03Railing, alt: 'Close-up of the freshly pressure-washed composite deck railing' },
       { src: pressure04Splitfence, alt: 'A wood privacy fence, one half freshly stained and cleaned, the other half weathered' },
+    ],
+  },
+  {
+    id: 'holiday',
+    title: 'Holiday Lighting',
+    blurb: 'Custom holiday lighting installations that make homes stand out all season long.',
+    photos: [
+      { src: holiday01, alt: 'Home decorated with warm white holiday lights at night' },
+      { src: holiday02, alt: 'Large home with detailed holiday roofline lighting installation' },
+      { src: holiday03, alt: 'Residential property illuminated with professional holiday lighting' },
     ],
   },
   {
