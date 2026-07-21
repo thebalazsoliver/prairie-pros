@@ -18,42 +18,72 @@ const initialForm = {
   email: '',
   service: services[0],
   message: '',
+  website: '',
 }
 
 export default function ContactForm() {
   const [form, setForm] = useState(initialForm)
+  const [status, setStatus] = useState('idle')
+  const [feedback, setFeedback] = useState('')
 
-  function handleChange(e) {
-    const { name, value } = e.target
-    setForm((f) => ({ ...f, [name]: value }))
+  function handleChange(event) {
+    const { name, value } = event.target
+
+    setForm((currentForm) => ({
+      ...currentForm,
+      [name]: value,
+    }))
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  async function handleSubmit(event) {
+    event.preventDefault()
 
-    const subject = `New Prairie Pros request - ${form.service}`
+    if (status === 'sending') return
 
-    const body = `
-New quote request from the Prairie Pros website:
+    setStatus('sending')
+    setFeedback('')
 
-Name: ${form.name}
-Email: ${form.email}
-Phone: ${form.phone}
-Service: ${form.service}
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
 
-Message:
-${form.message}
-    `.trim()
+      const result = await response.json().catch(() => ({}))
 
-    const mailtoLink = `mailto:PrairieProsLLC@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`
+      if (!response.ok) {
+        throw new Error(
+          result.message ||
+            'Your request could not be sent. Please try again.'
+        )
+      }
 
-    window.location.href = mailtoLink
+      setStatus('success')
+      setFeedback(
+        result.message ||
+          'Your request was sent successfully.'
+      )
+      setForm(initialForm)
+    } catch (error) {
+      console.error('Contact form error:', error)
+
+      setStatus('error')
+      setFeedback(
+        error.message ||
+          'Something went wrong. Please try again.'
+      )
+    }
   }
 
   return (
-    <section id="contact" className="contact section-pad" data-nav-theme="dark">
+    <section
+      id="contact"
+      className="contact section-pad"
+      data-nav-theme="dark"
+    >
       <div className="container">
         <div className="contact-card">
           <div className="contact-card__info">
@@ -117,6 +147,8 @@ ${form.message}
               <input
                 required
                 name="name"
+                autoComplete="name"
+                maxLength={100}
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your name"
@@ -129,6 +161,8 @@ ${form.message}
                 required
                 type="email"
                 name="email"
+                autoComplete="email"
+                maxLength={200}
                 value={form.email}
                 onChange={handleChange}
                 placeholder="you@email.com"
@@ -141,6 +175,8 @@ ${form.message}
                 required
                 type="tel"
                 name="phone"
+                autoComplete="tel"
+                maxLength={50}
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="(701) 555-0100"
@@ -168,20 +204,48 @@ ${form.message}
                 required
                 name="message"
                 rows={3}
+                maxLength={5000}
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Approximate square footage, roofline length, number of vehicles, or anything else that helps us quote it."
               />
             </label>
 
-            <button type="submit" className="contact-card__submit">
+            <div className="contact-card__honeypot" aria-hidden="true">
+              <label>
+                Website
+                <input
+                  type="text"
+                  name="website"
+                  value={form.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="contact-card__submit"
+              disabled={status === 'sending'}
+            >
               <ShinyText
-                text="Open Email"
+                text={status === 'sending' ? 'Sending...' : 'Send Request'}
                 color="#16274F"
                 shineColor="#ffffff"
                 speed={2.4}
               />
             </button>
+
+            {feedback && (
+              <p
+                className={`contact-card__feedback contact-card__feedback--${status}`}
+                role={status === 'error' ? 'alert' : 'status'}
+              >
+                {feedback}
+              </p>
+            )}
           </form>
         </div>
       </div>
