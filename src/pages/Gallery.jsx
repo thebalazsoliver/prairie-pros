@@ -4,11 +4,16 @@ import fleet01Before from '../assets/gallery/fleet-01-before.webp'
 import fleet01After from '../assets/gallery/fleet-01-after.webp'
 import fleet02Before from '../assets/gallery/fleet-02-before.webp'
 import fleet02After from '../assets/gallery/fleet-02-after.webp'
+import fleetWashing000 from '../assets/gallery/Fleetwashing000.webp'
+import fleetWashing0001 from '../assets/gallery/fleetwashing0001.webp'
 import pressure01Before from '../assets/gallery/pressure-01-before.webp'
 import pressure01After from '../assets/gallery/pressure-01-after.webp'
 import pressure02Splitdeck from '../assets/gallery/pressure-02-splitdeck.webp'
+import pressure03RailingBefore from '../assets/gallery/railingbefore.webp'
+import pressure03RailingMid from '../assets/gallery/railingmid.webp'
 import pressure03Railing from '../assets/gallery/pressure-03-railing.webp'
 import pressure04Splitfence from '../assets/gallery/pressure-04-splitfence.webp'
+import bins01Dirty1 from '../assets/gallery/bins-01-dirty1.webp'
 import bins01Clean from '../assets/gallery/bins-01-clean.webp'
 
 import './Gallery.css'
@@ -23,6 +28,8 @@ const categories = [
       { src: fleet01After, alt: 'The same Waste Management truck, washed clean' },
       { src: fleet02Before, alt: 'A second Waste Management truck in the shop before washing' },
       { src: fleet02After, alt: 'The same truck after a full fleet wash, bright white and green' },
+      { src: fleetWashing000, alt: 'Commercial sanitation vehicle ready for fleet washing service' },
+      { src: fleetWashing0001, alt: 'Commercial work truck after fleet washing service' },
     ],
   },
   {
@@ -33,7 +40,9 @@ const categories = [
       { src: pressure01Before, alt: 'A concrete patio and walkway stained with dirt before pressure washing' },
       { src: pressure01After, alt: 'The same patio area, cleaned and rinsed' },
       { src: pressure02Splitdeck, alt: 'A composite deck staircase, half cleaned and half still dirty, showing the contrast' },
-      { src: pressure03Railing, alt: 'Close-up of a freshly pressure-washed composite deck railing' },
+      { src: pressure03RailingBefore, alt: 'Composite railing before pressure washing with visible dirt and buildup' },
+      { src: pressure03RailingMid, alt: 'Composite railing during pressure washing showing the cleaned and dirty contrast' },
+      { src: pressure03Railing, alt: 'Close-up of the freshly pressure-washed composite deck railing' },
       { src: pressure04Splitfence, alt: 'A wood privacy fence, one half freshly stained and cleaned, the other half weathered' },
     ],
   },
@@ -42,6 +51,7 @@ const categories = [
     title: 'Bin Cleaning',
     blurb: 'Trash and recycling bins, rinsed out and deodorized.',
     photos: [
+      { src: bins01Dirty1, alt: 'Trash bins before cleaning with visible dirt and buildup' },
       { src: bins01Clean, alt: 'Two trash bins opened up, freshly cleaned and rinsed out' },
     ],
   },
@@ -62,7 +72,9 @@ export default function Gallery() {
   }
 
   function step(delta) {
-    setActiveIndex((i) => (i === null ? null : (i + delta + allPhotos.length) % allPhotos.length))
+    setActiveIndex((i) =>
+      i === null ? null : (i + delta + allPhotos.length) % allPhotos.length
+    )
   }
 
   return (
@@ -86,6 +98,7 @@ export default function Gallery() {
                 <h2 className="gallery-category__title">{cat.title}</h2>
                 <p className="gallery-category__blurb">{cat.blurb}</p>
               </div>
+
               <div className="gallery-grid">
                 {cat.photos.map((photo) => (
                   <button
@@ -105,24 +118,44 @@ export default function Gallery() {
       </section>
 
       {activeIndex !== null && (
-        <div className="gallery-lightbox" role="dialog" aria-modal="true" onClick={close}>
-          <button className="gallery-lightbox__close" onClick={close} aria-label="Close">×</button>
+        <div
+          className="gallery-lightbox"
+          role="dialog"
+          aria-modal="true"
+          onClick={close}
+        >
+          <button
+            className="gallery-lightbox__close"
+            onClick={close}
+            aria-label="Close"
+          >
+            ×
+          </button>
+
           <button
             className="gallery-lightbox__nav gallery-lightbox__nav--prev"
-            onClick={(e) => { e.stopPropagation(); step(-1) }}
+            onClick={(event) => {
+              event.stopPropagation()
+              step(-1)
+            }}
             aria-label="Previous photo"
           >
             ‹
           </button>
+
           <img
             src={allPhotos[activeIndex].src}
             alt={allPhotos[activeIndex].alt}
             className="gallery-lightbox__img"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
           />
+
           <button
             className="gallery-lightbox__nav gallery-lightbox__nav--next"
-            onClick={(e) => { e.stopPropagation(); step(1) }}
+            onClick={(event) => {
+              event.stopPropagation()
+              step(1)
+            }}
             aria-label="Next photo"
           >
             ›
