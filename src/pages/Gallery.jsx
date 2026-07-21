@@ -2,8 +2,6 @@ import { useState } from 'react'
 
 import fleet01Before from '../assets/gallery/fleet-01-before.webp'
 import fleet01After from '../assets/gallery/fleet-01-after.webp'
-import fleet02Before from '../assets/gallery/fleet-02-before.webp'
-import fleet02After from '../assets/gallery/fleet-02-after.webp'
 import fleetWashing000 from '../assets/gallery/Fleetwashing000.webp'
 import fleetWashing0001 from '../assets/gallery/fleetwashing0001.webp'
 import pressure01Before from '../assets/gallery/pressure-01-before.webp'
@@ -18,6 +16,11 @@ import bins01Clean from '../assets/gallery/bins-01-clean.webp'
 import holiday01 from '../assets/gallery/holiday-01.webp'
 import holiday02 from '../assets/gallery/holiday-02.webp'
 import holiday03 from '../assets/gallery/holiday-03.webp'
+import concrete1 from '../assets/gallery/concrete1.webp'
+import concrete2 from '../assets/gallery/concrete2.webp'
+import concrete3 from '../assets/gallery/concrete3.webp'
+import concrete4 from '../assets/gallery/concrete4.webp'
+import concrete5 from '../assets/gallery/concrete5.webp'
 
 import './Gallery.css'
 
@@ -29,8 +32,6 @@ const categories = [
     photos: [
       { src: fleet01Before, alt: 'Waste Management garbage truck covered in road grime before washing' },
       { src: fleet01After, alt: 'The same Waste Management truck, washed clean' },
-      { src: fleet02Before, alt: 'A second Waste Management truck in the shop before washing' },
-      { src: fleet02After, alt: 'The same truck after a full fleet wash, bright white and green' },
       { src: fleetWashing000, alt: 'Commercial sanitation vehicle ready for fleet washing service' },
       { src: fleetWashing0001, alt: 'Commercial work truck after fleet washing service' },
     ],
@@ -57,6 +58,18 @@ const categories = [
       { src: holiday01, alt: 'Home decorated with warm white holiday lights at night' },
       { src: holiday02, alt: 'Large home with detailed holiday roofline lighting installation' },
       { src: holiday03, alt: 'Residential property illuminated with professional holiday lighting' },
+    ],
+  },
+  {
+    id: 'concrete',
+    title: 'Concrete Sealing',
+    blurb: 'Concrete surfaces cleaned, restored, and sealed for a cleaner finish and longer-lasting protection.',
+    photos: [
+      { src: concrete1, alt: 'Weathered concrete surface before sealing treatment' },
+      { src: concrete2, alt: 'Close-up of concrete surface during preparation for sealing' },
+      { src: concrete3, alt: 'Concrete patio and walkway area prepared for sealing' },
+      { src: concrete4, alt: 'Concrete surface after cleaning and sealing work' },
+      { src: concrete5, alt: 'Finished sealed concrete surface with an even protective finish' },
     ],
   },
   {
