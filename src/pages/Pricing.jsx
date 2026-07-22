@@ -1,4 +1,4 @@
-import { Snowflake, Droplets, TreePine, Truck, Trash2 } from 'lucide-react'
+import { Snowflake, Droplets, ShieldCheck, TreePine, Truck, Trash2 } from 'lucide-react'
 import SpraySplash from '../components/SpraySplash.jsx'
 import ShinyText from '../components/ShinyText.jsx'
 import './Pricing.css'
@@ -43,6 +43,18 @@ const pricing = [
   },
   {
     id: '03',
+    icon: ShieldCheck,
+    slug: 'concrete-sealing',
+    title: 'Concrete Sealing',
+    billing: 'Professional sealing for residential and commercial concrete',
+    rows: [
+      { label: 'Residential', price: '$300 – $2,500+' },
+      { label: 'Commercial', price: '$1,500 – $10,000+' },
+    ],
+    note: 'Protect your concrete from water, salt, stains, and everyday wear with professional concrete sealing from Prairie Pros. We seal driveways, sidewalks, patios, and commercial concrete using high-quality sealers for long-lasting protection. Contact us today for a free estimate.',
+  },
+  {
+    id: '04',
     icon: TreePine,
     slug: 'holiday-lighting',
     title: 'Holiday Lighting',
@@ -53,7 +65,7 @@ const pricing = [
     note: 'Price scales with the length of your roofline and the style of lighting. Includes install; take-down can be bundled in.',
   },
   {
-    id: '04',
+    id: '05',
     icon: Truck,
     slug: 'fleet-washing',
     title: 'Fleet Washing',
@@ -64,7 +76,7 @@ const pricing = [
     note: 'Commercial vehicles and equipment, priced per unit. Heavier buildup, larger machines, and one-off washes run higher; regular recurring service brings the per-wash cost down.',
   },
   {
-    id: '05',
+    id: '06',
     icon: Trash2,
     slug: 'bin-cleaning',
     title: 'Bin Cleaning',

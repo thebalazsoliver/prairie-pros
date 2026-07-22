@@ -20,6 +20,16 @@ const services = [
     price: '$200–$1,000+',
   },
   {
+    tag: 'Protection',
+    title: 'Concrete Sealing',
+    slug: 'concrete-sealing',
+    desc: 'Protect driveways, sidewalks, patios, and commercial concrete from water, salt, stains, and everyday wear with high-quality sealers.',
+    priceLines: [
+      'Residential: $300–$2,500+',
+      'Commercial: $1,500–$10,000+',
+    ],
+  },
+  {
     tag: 'Seasonal',
     title: 'Holiday Lighting',
     slug: 'holiday-lighting',
@@ -47,7 +57,7 @@ export default function Services() {
     <section id="services" className="services section-pad">
       <div className="container">
         <p className="eyebrow services__eyebrow">What we do</p>
-        <h2 className="services__title">Five services. One crew you can count on.</h2>
+        <h2 className="services__title">Six services. One crew you can count on.</h2>
 
         <div className="services__grid">
           {services.map((s) => (

@@ -13,6 +13,7 @@ const items = [
     links: [
       { label: 'Snow Removal', href: '/pricing#snow-removal', ariaLabel: 'Snow removal pricing' },
       { label: 'Pressure Washing', href: '/pricing#pressure-washing', ariaLabel: 'Pressure washing pricing' },
+      { label: 'Concrete Sealing', href: '/pricing#concrete-sealing', ariaLabel: 'Concrete sealing pricing' },
       { label: 'Holiday Lighting', href: '/pricing#holiday-lighting', ariaLabel: 'Holiday lighting pricing' },
       { label: 'Fleet & Bin Washing', href: '/pricing#fleet-washing', ariaLabel: 'Fleet and bin washing pricing' }
     ]
@@ -129,7 +130,6 @@ const CardNav = ({
       if (isExpanded) {
         const newHeight = calculateHeight();
         gsap.set(navRef.current, { height: newHeight });
-
         tlRef.current.kill();
         const newTl = createTimeline();
         if (newTl) {
@@ -164,7 +164,6 @@ const CardNav = ({
     }
   };
 
-  // Close the menu when the person clicks or taps anywhere outside of it.
   useEffect(() => {
     if (!isExpanded) return;
 
@@ -183,10 +182,6 @@ const CardNav = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded]);
 
-  // Match the pill's colors to whatever is behind it: dark navy sections
-  // (like the hero or the contact block) keep the navy pill, but once you
-  // scroll past them onto a cream section, the pill flips to a light style
-  // instead of floating there as a dark blob.
   useEffect(() => {
     let rafId = null;
 
