@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
         <div className="container">
           <p className="eyebrow legal-hero__eyebrow">Legal</p>
           <h1 className="legal-hero__title">Privacy Policy</h1>
-          <p className="legal-hero__sub">Last updated: July 2026</p>
+          <p className="legal-hero__sub">Last updated: July 23, 2026</p>
         </div>
       </header>
 
