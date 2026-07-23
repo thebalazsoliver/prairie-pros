@@ -26,9 +26,9 @@ export default function Hero() {
             <span className="hero__title-accent"> every season.</span>
           </h1>
           <p className="hero__sub">
-            Snow removal, pressure washing, holiday lighting, fleet washing and bin
-            cleaning — handled by a crew that shows up early, works hard, and does
-            the job right the first time.
+            Snow removal, pressure washing, concrete sealing,
+             holiday lighting, fleet washing, and bin cleaning.
+              Dependable exterior care for homes and businesses, done right.
           </p>
           <div className="hero__actions">
             <a href="#contact" className="btn btn-gold">

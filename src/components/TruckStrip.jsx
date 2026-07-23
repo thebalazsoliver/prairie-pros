@@ -17,7 +17,7 @@ export default function TruckStrip() {
         <span className="truck-strip__divider" aria-hidden="true" />
         <ReviewSummary
           rating={5.0}
-          reviewCount={13}
+          reviewCount={14}
           reviewUrl="https://share.google/eLyquSGIEPVl2PPXg"
         />
       </div>
