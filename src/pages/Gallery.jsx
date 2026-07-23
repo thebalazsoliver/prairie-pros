@@ -21,10 +21,29 @@ import concrete2 from '../assets/gallery/concrete2.webp'
 import concrete3 from '../assets/gallery/concrete3.webp'
 import concrete4 from '../assets/gallery/concrete4.webp'
 import concrete5 from '../assets/gallery/concrete5.webp'
+import snow1 from '../assets/gallery/snow1.webp'
+import snow2 from '../assets/gallery/snow2.webp'
+import snow3 from '../assets/gallery/snow3.webp'
 
 import './Gallery.css'
 
+const snowEquipmentPhoto = '/hokotro.webp'
+
 const categories = [
+  {
+    id: 'snow-equipment',
+    title: 'Snow Removal Equipment',
+    blurb: 'Our 16-foot Top Gun Backblade helps deliver a cleaner scrape with fewer passes and faster clearing.',
+    photos: [
+      {
+        src: snowEquipmentPhoto,
+        alt: 'Prairie Pros 16-foot Top Gun Backblade used for efficient snow removal',
+      },
+      { src: snow1, alt: 'Prairie Pros truck with Top Gun Backblade clearing snow from a driveway' },
+      { src: snow2, alt: 'Prairie Pros sidewalk cleaning' },
+      { src: snow3, alt: 'Prairie Pros truck clearing snow from a commercial parking lot' },
+    ],
+  },
   {
     id: 'fleet',
     title: 'Fleet Washing',
@@ -65,13 +84,11 @@ const categories = [
     title: 'Concrete Sealing',
     blurb: 'Concrete surfaces cleaned, restored, and sealed for a cleaner finish and longer-lasting protection.',
     photos: [
-      { src: concrete3, alt: 'Concrete patio and walkway area prepared for sealing' },
-      { src: concrete5, alt: 'Finished sealed concrete surface with an even protective finish' },
-      { src: concrete4, alt: 'Concrete surface after cleaning and sealing work' },
       { src: concrete1, alt: 'Weathered concrete surface before sealing treatment' },
       { src: concrete2, alt: 'Close-up of concrete surface during preparation for sealing' },
-      
-      
+      { src: concrete3, alt: 'Concrete patio and walkway area prepared for sealing' },
+      { src: concrete4, alt: 'Concrete surface after cleaning and sealing work' },
+      { src: concrete5, alt: 'Finished sealed concrete surface with an even protective finish' },
     ],
   },
   {

@@ -5,15 +5,23 @@ import './FAQ.css'
 const faqs = [
   {
     q: 'How is snow removal priced?',
-    a: 'By square footage, with a choice between per-visit billing or a flat seasonal rate. Residential jobs typically run $30–$2,500 depending on lot size and plan. Commercial properties are quoted individually.',
+    a: 'Pricing varies based on lot size, snowfall accumulation, and complexity. Residential service is available per visit, monthly, or seasonally, and commercial plans are available for properties of all sizes.',
+  },
+  {
+    q: 'What equipment do you use for snow removal?',
+    a: 'Prairie Pros uses a 16-foot Top Gun Backblade that pulls snow from behind the truck. Its wider clearing path can reduce the number of passes, create a cleaner scrape, and help us clear many properties up to twice as fast as a traditional front plow.',
   },
   {
     q: 'Do I need a contract for snow removal?',
-    a: 'No — you can pay per visit if you prefer flexibility, or lock in a seasonal rate if you\'d rather have one predictable price for the whole winter.',
+    a: 'No — you can pay per visit if you prefer flexibility, choose monthly service, or lock in a seasonal rate for predictable winter coverage.',
   },
   {
     q: 'What affects my pressure washing price?',
     a: 'Square footage is the main factor, along with how much buildup or staining we\'re dealing with and how many surfaces you\'d like done in one visit.',
+  },
+  {
+    q: 'How does concrete sealing help?',
+    a: 'Professional sealing helps protect driveways, sidewalks, patios, and commercial concrete from water, salt, stains, and everyday wear.',
   },
   {
     q: 'When should I book holiday lighting?',
@@ -33,7 +41,7 @@ const faqs = [
   },
   {
     q: 'How do I get a quote?',
-    a: 'Fill out the contact form on our home page or call/text (701) 260-9707. Commercial snow removal always requires a custom quote based on your property.',
+    a: 'Fill out the contact form on our home page or call/text (701) 260-9707. We\'ll review your property and service needs before providing an accurate estimate.',
   },
 ]
 

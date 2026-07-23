@@ -1,0 +1,132 @@
+.snow-equipment {
+  background:
+    radial-gradient(circle at 15% 25%, rgba(109, 197, 226, 0.16), transparent 34%),
+    linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: var(--cream);
+  overflow: hidden;
+}
+
+.snow-equipment__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 54px;
+  align-items: center;
+}
+
+.snow-equipment__media {
+  position: relative;
+  min-height: 460px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 180, 41, 0.28);
+  box-shadow: var(--shadow-lift);
+}
+
+.snow-equipment__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
+}
+
+.snow-equipment__badge {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(14, 27, 56, 0.9);
+  border: 1px solid rgba(240, 180, 41, 0.55);
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+}
+
+.snow-equipment__eyebrow { color: var(--ice); margin-bottom: 14px; }
+
+.snow-equipment__title {
+  max-width: 13ch;
+  color: var(--chrome-1);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 0.98;
+}
+
+.snow-equipment__text {
+  margin-top: 22px;
+  max-width: 58ch;
+  color: rgba(247, 245, 239, 0.78);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.snow-equipment__stats {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.snow-equipment__stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(247, 245, 239, 0.07);
+  border: 1px solid rgba(247, 245, 239, 0.1);
+  color: var(--gold);
+}
+
+.snow-equipment__stat span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.snow-equipment__stat strong {
+  color: var(--cream);
+  font-size: 0.88rem;
+  line-height: 1.2;
+}
+
+.snow-equipment__stat small {
+  margin-top: 3px;
+  color: rgba(247, 245, 239, 0.58);
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.snow-equipment__cta {
+  margin-top: 30px;
+  display: inline-flex;
+}
+
+@media (max-width: 960px) {
+  .snow-equipment__card { grid-template-columns: 1fr; gap: 34px; }
+  .snow-equipment__media,
+  .snow-equipment__image { min-height: 380px; }
+  .snow-equipment__title { max-width: 16ch; }
+}
+
+@media (max-width: 620px) {
+  .snow-equipment__card { gap: 26px; }
+  .snow-equipment__media,
+  .snow-equipment__image { min-height: 280px; }
+  .snow-equipment__media { border-radius: 18px; }
+  .snow-equipment__badge {
+    left: 12px;
+    bottom: 12px;
+    font-size: 0.6rem;
+  }
+  .snow-equipment__stats { grid-template-columns: 1fr; }
+  .snow-equipment__stat { padding: 12px 14px; }
+  .snow-equipment__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
