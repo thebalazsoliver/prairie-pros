@@ -17,7 +17,8 @@ export default function PrivacyPolicy() {
           <p>
             Prairie Pros LLC ("Prairie Pros," "we," "us") operates this website. This
             policy explains what information we collect from visitors, how we use it,
-            and who else touches that data as part of running the site.
+            and which service providers may process that information as part of
+            operating the site and responding to inquiries.
           </p>
 
           <h2>Who's responsible for your data</h2>
@@ -33,22 +34,27 @@ export default function PrivacyPolicy() {
 
           <h2>What information we collect</h2>
           <p>
-            The only personal information this site collects is what you choose to
-            type into the contact form on the home page — your name, phone number,
-            email address, the service you're asking about, and whatever message you
-            write.
+            The personal information this site collects is what you choose to enter
+            into the contact form on the home page — your name, phone number, email
+            address, the service you're asking about, and the message you submit.
           </p>
           <p>
-            That form doesn't submit to a server or a third-party form processor.
-            Instead, it opens your device's own email app with a pre-filled message
-            addressed to <a href="mailto:PrairieProsLLC@gmail.com">PrairieProsLLC@gmail.com</a>.
-            From that point on, the message travels through your email provider and
-            ours (see "Third parties" below) like any other email you send.
+            When you submit the form, the information is sent securely through a
+            Cloudflare Pages Function and then delivered to Prairie Pros through
+            Brevo's transactional email service. Brevo may process the submitted
+            information and limited delivery records for the purpose of sending,
+            securing, troubleshooting, and maintaining records of the communication.
           </p>
           <p>
-            We don't run analytics, advertising, or tracking scripts of any kind on
-            this site — no Google Analytics, no Meta/Facebook Pixel, nothing that
-            profiles your visit or follows you elsewhere.
+            We use the information you submit only to respond to your inquiry, prepare
+            an estimate, schedule or provide requested services, and maintain related
+            business records. We do not use contact-form information for unrelated
+            advertising or sell it to third parties.
+          </p>
+          <p>
+            We don't run analytics, advertising, or behavioral tracking scripts of
+            any kind on this site — no Google Analytics, no Meta/Facebook Pixel, and
+            nothing intended to profile your visit or follow you elsewhere.
           </p>
 
           <h2>Cookies &amp; local storage</h2>
@@ -61,21 +67,33 @@ export default function PrivacyPolicy() {
 
           <h2>Third parties involved in running this site</h2>
           <p>
-            A handful of outside services are involved in getting this website onto
-            your screen. Each of them may process limited technical information (like
-            your IP address) purely as part of that job:
+            A small number of outside services are involved in operating this website,
+            delivering form submissions, and making the site available to visitors.
+            These providers may process limited technical or contact information only
+            as needed to perform those services:
           </p>
           <ul>
             <li>
               <strong>Cloudflare, Inc.</strong> — 101 Townsend Street, San
               Francisco, CA 94107, USA. Cloudflare hosts the website's files
-              (Cloudflare Pages) and manages our domain name (Cloudflare
-              Registrar). Cloudflare also provides the security and
-              content-delivery layer that gets the page to your browser
-              quickly, which involves processing standard connection data
-              such as IP address and request logs. See{' '}
+              through Cloudflare Pages, processes contact-form submissions
+              through a Pages Function, manages our domain name, and provides
+              security and content delivery. This may involve processing standard
+              connection data such as IP addresses, request logs, and form data
+              submitted to the contact endpoint. See{' '}
               <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">
                 Cloudflare's privacy policy
+              </a>.
+            </li>
+            <li>
+              <strong>Brevo (Sendinblue)</strong> — Brevo is used to deliver
+              transactional emails submitted through the website contact form.
+              Information submitted through the form, including your name, email
+              address, phone number, selected service, and message, may be processed
+              by Brevo for email delivery, security, troubleshooting, and related
+              communication records. See{' '}
+              <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noreferrer">
+                Brevo's privacy policy
               </a>.
             </li>
             <li>
@@ -90,29 +108,36 @@ export default function PrivacyPolicy() {
               </a>.
             </li>
             <li>
-              <strong>Your email provider (and ours)</strong> — if you use the
-              contact form, the resulting email is handled by your email provider and
-              by ours (Gmail) according to their own privacy policies.
+              <strong>Google LLC (Gmail)</strong> — form submissions delivered
+              through Brevo are received and stored in the Prairie Pros Gmail
+              account. Google may process email content and related account data
+              according to its own privacy policy. See{' '}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">
+                Google's privacy policy
+              </a>.
             </li>
           </ul>
+
           <p>
-            We don't sell, rent, or share your information with anyone for marketing
-            purposes.
+            We don't sell, rent, or share your personal information with third parties
+            for their own marketing purposes.
           </p>
 
           <h2>How long we keep it</h2>
           <p>
-            We keep quote-request emails for as long as reasonably needed to respond
-            to you and provide the service you asked about, then delete them at our
-            discretion.
+            We keep quote requests and related communications for as long as reasonably
+            needed to respond to you, provide the requested service, handle follow-up
+            questions, and maintain appropriate business records. Information may be
+            deleted when it is no longer reasonably needed.
           </p>
 
           <h2>Your choices</h2>
           <p>
             You can ask Zane at any time what information we have connected to you,
-            or ask that it be deleted, using the phone number or email above. You can
-            also clear your browser's local storage or cookies at any time through
-            your browser's settings.
+            request a correction, or ask that it be deleted, subject to any information
+            we may need to keep for legitimate business or legal reasons. Use the phone
+            number or email address listed above. You can also clear your browser's
+            local storage or cookies at any time through your browser's settings.
           </p>
 
           <h2>Children's privacy</h2>
