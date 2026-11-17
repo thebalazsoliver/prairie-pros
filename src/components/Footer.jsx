@@ -5,6 +5,10 @@ import './Footer.css'
 export default function Footer() {
   const year = new Date().getFullYear()
 
+  function openCookieSettings() {
+    window.dispatchEvent(new Event('pp:open-cookie-preferences'))
+  }
+
   return (
     <footer className="footer" data-nav-theme="dark">
       <div className="container footer__inner">
@@ -67,9 +71,17 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p>© {year} Prairie Pros LLC. Built to weather every season.</p>
-          <div className="footer__legal-links">
+          <div className="footer__legal-links" style={{ flexWrap: 'wrap' }}>
             <Link to="/privacy-policy" className="footer__legal-link">Privacy Policy</Link>
             <Link to="/cookie-policy" className="footer__legal-link">Cookie Policy</Link>
+            <button
+              type="button"
+              className="footer__legal-link"
+              onClick={openCookieSettings}
+              style={{ background: 'none', border: 0, font: 'inherit', padding: 0, cursor: 'pointer' }}
+            >
+              Cookie settings
+            </button>
           </div>
         </div>
       </div>
