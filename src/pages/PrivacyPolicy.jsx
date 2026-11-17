@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
         <div className="container">
           <p className="eyebrow legal-hero__eyebrow">Legal</p>
           <h1 className="legal-hero__title">Privacy Policy</h1>
-          <p className="legal-hero__sub">Last updated: July 23, 2026</p>
+          <p className="legal-hero__sub">Last updated: November 17, 2026</p>
         </div>
       </header>
 
@@ -51,17 +51,28 @@ export default function PrivacyPolicy() {
             business records. We do not use contact-form information for unrelated
             advertising or sell it to third parties.
           </p>
+          <h2>Optional website analytics</h2>
           <p>
-            We don't run analytics, advertising, or behavioral tracking scripts of
-            any kind on this site — no Google Analytics, no Meta/Facebook Pixel, and
-            nothing intended to profile your visit or follow you elsewhere.
+            If you give permission in our cookie notice, we use Google Analytics 4,
+            managed through Google Tag Manager, to understand site traffic and
+            improve the website. This may include pages visited, general interaction
+            events, approximate location, device and browser information, and
+            identifiers stored in analytics cookies. Google may receive technical
+            information about your connection when analytics is enabled.
+          </p>
+          <p>
+            Google Analytics and Tag Manager are not loaded for optional analytics
+            unless you accept analytics. If you reject them, the website continues
+            to work. You can change your choice using the <strong>Cookie settings</strong>
+            control in the footer. We do not use analytics data for advertising
+            campaigns or sell it to third parties.
           </p>
 
           <h2>Cookies &amp; local storage</h2>
           <p>
-            We use a small amount of browser local storage to remember whether you've
-            accepted or dismissed the cookie notice, so it doesn't show up on every
-            visit. Full details are in our{' '}
+            We use browser local storage to remember whether you accepted or
+            rejected optional analytics. If accepted, Google Analytics may also set
+            analytics cookies. Full details are in our{' '}
             <a href="/cookie-policy">Cookie Policy</a>.
           </p>
 
@@ -97,6 +108,14 @@ export default function PrivacyPolicy() {
               </a>.
             </li>
             <li>
+              <strong>Google LLC (Google Analytics and Tag Manager)</strong> —
+              when you accept optional analytics, we use these tools to measure
+              site visits and interactions. See{' '}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">
+                Google's privacy policy
+              </a>.
+            </li>
+            <li>
               <strong>Google LLC (Google Fonts)</strong> — 1600 Amphitheatre
               Parkway, Mountain View, CA 94043, USA. The site's typefaces are
               loaded from Google's font servers (fonts.googleapis.com and
@@ -128,7 +147,9 @@ export default function PrivacyPolicy() {
             We keep quote requests and related communications for as long as reasonably
             needed to respond to you, provide the requested service, handle follow-up
             questions, and maintain appropriate business records. Information may be
-            deleted when it is no longer reasonably needed.
+            deleted when it is no longer reasonably needed. Analytics retention is
+            governed by our Google Analytics settings and Google's applicable
+            retention and deletion policies.
           </p>
 
           <h2>Your choices</h2>
@@ -136,8 +157,9 @@ export default function PrivacyPolicy() {
             You can ask Zane at any time what information we have connected to you,
             request a correction, or ask that it be deleted, subject to any information
             we may need to keep for legitimate business or legal reasons. Use the phone
-            number or email address listed above. You can also clear your browser's
-            local storage or cookies at any time through your browser's settings.
+            number or email address listed above. You can withdraw optional analytics
+            consent using Cookie settings in the footer and clear your browser's local
+            storage or cookies at any time through your browser's settings.
           </p>
 
           <h2>Children's privacy</h2>
